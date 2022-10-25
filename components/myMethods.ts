@@ -50,9 +50,9 @@ export const sortByAge = (people: DataPersonArray) => {
 
     //Array.isArray(people) true
 
-    if (people === undefined ) {
+    if (people === undefined) {
         return []
-    } else if(!Array.isArray(people) ){
+    } else if (!Array.isArray(people)) {
         return []
     }
 
@@ -93,22 +93,32 @@ export const findByName = (people: any, searchKeyword: string) => {
         return []
     }
 
-    const filteredList=people.filter((user:any)=>{
+    const filteredList = people.filter((user: any) => {
         return user.name.includes(searchKeyword)
     })
 
     return filteredList;
 }
 
+
+// ex5
 // 2 * 6 = 18
-export const multiply = (a: any, b: any) => {
-    return 0;
+export const multiply = (a: number, b: number) => {
+    const result = a * b
+    return result;
 }
 
+// ex6
 // Sum of all numbers in a list. Example input: [1,6,3,8] should return 18
 // Edge case: [1,5, undefined, "dupa", 2] . Ommit NaN numbers and sum the rest. So in this case sum will be 8
+
 export const sumNumbers = (numberList: any) => {
-    return 0;
+
+    const sumResult = numberList.reduce((result: any, prev: any) => {
+        return result + prev
+    }, 0)
+
+    return sumResult;
 }
 
 // Return just name field from person object. { name: 'Kasia', age: 5 } => 'Kasia'
@@ -116,4 +126,6 @@ export const sumNumbers = (numberList: any) => {
 export const getPersonName = (person: any) => {
     return undefined;
 }
+
+
 // NaN when we add number and undefined 

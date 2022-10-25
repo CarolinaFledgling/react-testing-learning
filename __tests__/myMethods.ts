@@ -1,4 +1,4 @@
-import { getTitle, add, sortByAge, findByName } from "@/components/myMethods";
+import { getTitle, add, sortByAge, findByName,multiply,sumNumbers } from "@/components/myMethods";
 
 const people = [
   { name: 'Kasia', age: 25 },
@@ -58,6 +58,22 @@ describe("myMethods", () => {
 
 
 
+//ex5 
+describe('multiply', ()=>{
+  it('should return the result of multiplication',()=>{
+    expect(multiply(2,3)).toBe(6)
+  })
+})
+
+//ex6 
+
+describe('sumNumbers',()=>{
+  it('should return sum',()=>{
+    expect(sumNumbers([1,6,3,8])).toBe(18)
+  })
+})
+
+
   describe('getTitle', () => {
     it("should return title for main page", () => {
       const title = getTitle(true);
@@ -102,7 +118,7 @@ describe("myMethods", () => {
       expect(add(2, 'dupa')).toBe(0);
     })
 
-    it('should return 0 for "dupa" +"dupa"', () => {
+    it('should return 0 for "dupa" + "dupa"', () => {
       expect(add('dupa', 'dupa')).toBe(0);
     })
   })
