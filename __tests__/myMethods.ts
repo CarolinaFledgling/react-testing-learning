@@ -70,6 +70,9 @@ describe('multiply', ()=>{
   it('should return the result of multiplication',()=>{
     expect(multiply(2,3)).toBe(6)
   })
+  it('should return 0 if we one of parameter is  undefined', ()=>{
+    expect(multiply(2,undefined)).toBe(0)
+  })
 })
 
 //ex6 
@@ -77,6 +80,9 @@ describe('multiply', ()=>{
 describe('sumNumbers',()=>{
   it('should return sum',()=>{
     expect(sumNumbers([1,6,3,8])).toBe(18)
+  })
+  it('should return sum with falsy value',()=>{
+    expect(sumNumbers([1,5, undefined, "dupa", 2])).toBe(8)
   })
 })
 
