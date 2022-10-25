@@ -1,3 +1,5 @@
+// ex1
+
 export const getTitle = (isMainPage: boolean) => {
     if (isMainPage) {
         return "Welcome on the main page";
@@ -5,6 +7,9 @@ export const getTitle = (isMainPage: boolean) => {
 
     return "Welcome on the sub page";
 }
+
+
+//ex2
 
 export const add = (a: any, b: any) => {
     const numb1= Number(a)
@@ -21,9 +26,53 @@ export const add = (a: any, b: any) => {
     return result
 }
 
-export const sortByAge = (people: any) => {
-    return people;
+
+
+//ex3 
+
+// SORT !!!!
+
+interface DataPerson {
+    name:string
+    age:number
 }
+
+type DataPersonArray=DataPerson[]
+
+const people = [
+    { name: 'Kasia', age: 25 },
+    { name: 'Maria', age: 2 },
+    { name: 'Robert', age: 65 },
+    { name: 'Rafal', age: 11 }
+  ]
+
+export const sortByAge = (people: DataPersonArray) => {
+const newPeopleList = [...people]
+
+const sortedlist=newPeopleList.sort((personA:DataPerson, personB:DataPerson)=>{
+    const personOne= Number(personA.age)
+    const personTwo= Number(personB.age)
+
+    if(personOne > personTwo){
+        return 1
+    }
+
+    if(personOne < personTwo){
+        return -1
+    }
+
+    return 0
+
+    
+})
+
+    return sortedlist;
+}
+
+const sortedPeople=sortByAge(people)
+
+console.log(sortedPeople)
+
 
 /**
  * Return list of people matching search keyword

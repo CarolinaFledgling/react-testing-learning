@@ -10,9 +10,13 @@ const people = [
 /**
  * Zaimplementuj metody.
  * 
+ * // Add a new TESTs when search can get undefined or empty string 
  * - Obsluz scenariusze gdzies ktos przekaze undefined, stringa to zwroc pusta tablice i dodaj testy dla takich wypadkow
  */
+
 describe("myMethods", () => {
+
+  //ex3
   describe('sortByAge', () => {
      it('should return sorted people', () => {
       expect(sortByAge(people)).toStrictEqual([
@@ -24,6 +28,8 @@ describe("myMethods", () => {
      })
   });
 
+
+
   describe('findByName', () => {
     it('should only return names starting by R', () => {
       expect(findByName(people, 'R')).toStrictEqual([
@@ -32,6 +38,8 @@ describe("myMethods", () => {
       ])
     })
   });
+
+
 
   describe('getTitle', () => {
     it("should return title for main page", () => {
