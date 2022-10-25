@@ -108,16 +108,6 @@ describe('getPersonName',()=>{
   })
 })
 
-
-
-
-
-
-
-
-
-
-
   describe('getTitle', () => {
     it("should return title for main page", () => {
       const title = getTitle(true);
