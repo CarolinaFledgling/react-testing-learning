@@ -138,10 +138,22 @@ export const sumNumbers = (numberList: any) => {
     return sumResult;
 }
 
+// ex6
+
 // Return just name field from person object. { name: 'Kasia', age: 5 } => 'Kasia'
 // But also cover scenarios where person can be undefined, then return empty string '';
 export const getPersonName = (person: any) => {
-    return undefined;
+
+    // const personName=people.map((person)=>{
+    //     if(!person) return ''
+
+    //     return person.name
+    // })
+
+    if(!person) return ''
+
+    const personName=person.name
+    return personName;
 }
 
 

@@ -1,4 +1,4 @@
-import { getTitle, add, sortByAge, findByName,multiply,sumNumbers } from "@/components/myMethods";
+import { getTitle, add, sortByAge, findByName,multiply,sumNumbers,getPersonName } from "@/components/myMethods";
 
 const people = [
   { name: 'Kasia', age: 25 },
@@ -85,6 +85,32 @@ describe('sumNumbers',()=>{
     expect(sumNumbers([1,5, undefined, "dupa", 2])).toBe(8)
   })
 })
+
+
+//ex7
+
+describe('getPersonName',()=>{
+  it('should return name',()=>{
+    const person={
+      name:'Kasia'
+    }
+    expect(getPersonName(person)).toBe('Kasia')
+  })
+
+  it('should return empty string when we dont have a person',()=>{
+ 
+    expect(getPersonName()).toBe('')
+  })
+})
+
+
+
+
+
+
+
+
+
 
 
   describe('getTitle', () => {
