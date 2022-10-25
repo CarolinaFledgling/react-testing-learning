@@ -46,7 +46,7 @@ describe("myMethods", () => {
   })
 
 
-
+//ex4
   describe('findByName', () => {
     it('should only return names starting by R', () => {
       expect(findByName(people, 'R')).toStrictEqual([

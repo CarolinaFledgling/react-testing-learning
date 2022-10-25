@@ -86,8 +86,18 @@ export const sortByAge = (people: DataPersonArray) => {
 /**
  * Return list of people matching search keyword
  */
+
+//ex4
 export const findByName = (people: any, searchKeyword: string) => {
-    return people;
+    if (searchKeyword === "") {
+        return []
+    }
+
+    const filteredList=people.filter((user:any)=>{
+        return user.name.includes(searchKeyword)
+    })
+
+    return filteredList;
 }
 
 // 2 * 6 = 18
