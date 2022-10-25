@@ -12,13 +12,13 @@ export const getTitle = (isMainPage: boolean) => {
 //ex2
 
 export const add = (a: any, b: any) => {
-    const numb1= Number(a)
-    const numb2= Number(b)
+    const numb1 = Number(a)
+    const numb2 = Number(b)
 
-    const result= numb1 + numb2 
+    const result = numb1 + numb2
 
-    
-    if(isNaN(result)){
+
+    if (isNaN(result)) {
         return 0;
     }
 
@@ -33,45 +33,54 @@ export const add = (a: any, b: any) => {
 // SORT !!!!
 
 interface DataPerson {
-    name:string
-    age:number
+    name: string
+    age: number
 }
 
-type DataPersonArray=DataPerson[]
+type DataPersonArray = DataPerson[]
 
 const people = [
     { name: 'Kasia', age: 25 },
     { name: 'Maria', age: 2 },
     { name: 'Robert', age: 65 },
     { name: 'Rafal', age: 11 }
-  ]
+]
 
 export const sortByAge = (people: DataPersonArray) => {
-const newPeopleList = [...people]
 
-const sortedlist=newPeopleList.sort((personA:DataPerson, personB:DataPerson)=>{
-    const personOne= Number(personA.age)
-    const personTwo= Number(personB.age)
+    //Array.isArray(people) true
 
-    if(personOne > personTwo){
-        return 1
+    if (people === undefined ) {
+        return []
+    } else if(!Array.isArray(people) ){
+        return []
     }
 
-    if(personOne < personTwo){
-        return -1
-    }
+    const newPeopleList = [...people]
 
-    return 0
+    const sortedlist = newPeopleList.sort((personA: DataPerson, personB: DataPerson) => {
+        const personOne = Number(personA.age)
+        const personTwo = Number(personB.age)
 
-    
-})
+        if (personOne > personTwo) {
+            return 1
+        }
+
+        if (personOne < personTwo) {
+            return -1
+        }
+
+        return 0
+
+
+    })
 
     return sortedlist;
 }
 
-const sortedPeople=sortByAge(people)
+// const sortedPeople = sortByAge(people)
 
-console.log(sortedPeople)
+// console.log(sortedPeople)
 
 
 /**
@@ -82,7 +91,7 @@ export const findByName = (people: any, searchKeyword: string) => {
 }
 
 // 2 * 6 = 18
-export const multiply = (a:any, b: any) => {
+export const multiply = (a: any, b: any) => {
     return 0;
 }
 

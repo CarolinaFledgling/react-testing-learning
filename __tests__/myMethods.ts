@@ -10,23 +10,40 @@ const people = [
 /**
  * Zaimplementuj metody.
  * 
- * // Add a new TESTs when search can get undefined or empty string 
+ * 
  * - Obsluz scenariusze gdzies ktos przekaze undefined, stringa to zwroc pusta tablice i dodaj testy dla takich wypadkow
  */
 
 describe("myMethods", () => {
 
-  //ex3
+  //ex3 test when get people arr
   describe('sortByAge', () => {
-     it('should return sorted people', () => {
+
+    it('should return sorted people', () => {
       expect(sortByAge(people)).toStrictEqual([
         { name: 'Maria', age: 2 },
         { name: 'Rafal', age: 11 },
-        { name: 'Kasia', age: 25 },        
+        { name: 'Kasia', age: 25 },
         { name: 'Robert', age: 65 },
       ])
-     })
+    })
   });
+
+  // test when get empty string
+  describe('sortByAge', () => {
+    it('should return empty array', () => {
+      const undefinedValue= sortByAge()
+      expect(sortByAge(undefinedValue)).toStrictEqual([])
+    })
+  })
+
+
+  describe('sortByAge', () => {
+    it('it should return empty array', () => {
+      const notArrValue= sortByAge({})
+      expect(sortByAge(notArrValue)).toStrictEqual([])
+    })
+  })
 
 
 
@@ -46,7 +63,7 @@ describe("myMethods", () => {
       const title = getTitle(true);
       expect(title).toBe('Welcome on the main page');
     });
-  
+
     it("should return title for sub page", () => {
       const title = getTitle(false);
       expect(title).toBe('Welcome on the sub page');
@@ -55,11 +72,11 @@ describe("myMethods", () => {
 
   describe('add', () => {
     it('should return 4 for 2 +2', () => {
-      expect(add(2,2)).toBe(4);
+      expect(add(2, 2)).toBe(4);
     })
 
     it('should return 4 for "2" + "2"', () => {
-      expect(add('2','2')).toBe(4);
+      expect(add('2', '2')).toBe(4);
     })
 
     it('should return 0 for undefined + undefined', () => {
@@ -91,4 +108,4 @@ describe("myMethods", () => {
   })
 });
 
-export {}
+export { }
