@@ -37,7 +37,7 @@ interface DataPerson {
     age: number
 }
 
-type DataPersonArray = DataPerson[]
+type DataPersonArray = DataPerson[] | Object
 
 const people = [
     { name: 'Kasia', age: 25 },
@@ -46,7 +46,7 @@ const people = [
     { name: 'Rafal', age: 11 }
 ]
 
-export const sortByAge = (people: DataPersonArray) => {
+export const sortByAge = (people?: DataPersonArray) => {
 
     //Array.isArray(people) true
 
@@ -124,15 +124,11 @@ export const multiply = (a: any, b: any) => {
 
 export const sumNumbers = (numberList: any) => {
 
-    const sumResult = numberList.reduce((result: any, prev: any) => {
-
-        if(result === undefined || typeof result === 'string' || result instanceof String || result === ""){
-            result=0
+    const sumResult = numberList.reduce((result: any, value: any) => {
+        if(value === undefined || typeof value === 'string' || value instanceof String || value === "" ){
+           value=0
         }
-        if(prev === undefined || typeof prev === 'string' || prev instanceof String || prev === "" ){
-           prev=0
-        }
-        return result + prev
+        return result + value
     }, 0)
 
     return sumResult;
@@ -142,7 +138,7 @@ export const sumNumbers = (numberList: any) => {
 
 // Return just name field from person object. { name: 'Kasia', age: 5 } => 'Kasia'
 // But also cover scenarios where person can be undefined, then return empty string '';
-export const getPersonName = (person: any) => {
+export const getPersonName = (person?: any) => {
 
     // const personName=people.map((person)=>{
     //     if(!person) return ''

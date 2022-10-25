@@ -31,24 +31,21 @@ describe("myMethods", () => {
 
   // test when get empty string
   describe('sortByAge', () => {
-    it('should return empty array if we have undefined', () => {
-      const undefinedValue= sortByAge()
-      expect(sortByAge(undefinedValue)).toStrictEqual([])
+    it('should return empty array if we have undefined', () => {     
+      expect(sortByAge()).toStrictEqual([])
     })
   })
 
 
   describe('sortByAge', () => {
-    it('it should return empty array if we have not array data type', () => {
-      const notArrValue= sortByAge({})
-      expect(sortByAge(notArrValue)).toStrictEqual([])
+    it('it should return empty array if we have not array data type', () => {     
+      expect(sortByAge({})).toStrictEqual([])
     })
   })
 
   describe('sortByAge', () => {
-    it('it should return empty array if we have string data type', () => {
-      const stringValue= sortByAge('text')
-      expect(sortByAge(stringValue)).toStrictEqual([])
+    it('it should return empty array if we have string data type', () => {      
+      expect(sortByAge('text')).toStrictEqual([])
     })
   })
 
@@ -83,6 +80,14 @@ describe('sumNumbers',()=>{
   })
   it('should return sum with falsy value',()=>{
     expect(sumNumbers([1,5, undefined, "dupa", 2])).toBe(8)
+  })
+
+  it('should return sum with NaN value',()=>{
+    expect(sumNumbers([1,5, NaN, 2])).toBe(8)
+  })
+
+  it('should return sum with numberic string value',()=>{
+    expect(sumNumbers([1,5, "2", 2])).toBe(8)
   })
 })
 
