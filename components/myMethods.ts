@@ -54,6 +54,8 @@ export const sortByAge = (people: DataPersonArray) => {
         return []
     } else if (!Array.isArray(people)) {
         return []
+    } else if(typeof people ==='string' || people instanceof String){
+        return[]
     }
 
     const newPeopleList = [...people]

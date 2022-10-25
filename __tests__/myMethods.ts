@@ -31,7 +31,7 @@ describe("myMethods", () => {
 
   // test when get empty string
   describe('sortByAge', () => {
-    it('should return empty array', () => {
+    it('should return empty array if we have undefined', () => {
       const undefinedValue= sortByAge()
       expect(sortByAge(undefinedValue)).toStrictEqual([])
     })
@@ -39,9 +39,16 @@ describe("myMethods", () => {
 
 
   describe('sortByAge', () => {
-    it('it should return empty array', () => {
+    it('it should return empty array if we have not array data type', () => {
       const notArrValue= sortByAge({})
       expect(sortByAge(notArrValue)).toStrictEqual([])
+    })
+  })
+
+  describe('sortByAge', () => {
+    it('it should return empty array if we have string data type', () => {
+      const stringValue= sortByAge('text')
+      expect(sortByAge(stringValue)).toStrictEqual([])
     })
   })
 
